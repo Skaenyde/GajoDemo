@@ -21,7 +21,7 @@ export default function LocationMap() {
     const script = document.createElement("script");
     script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
     script.onload = () => {
-      const L = (window as Record<string, unknown>).L as {
+      const L = (window as unknown as Record<string, unknown>).L as {
         map: (el: HTMLElement, opts: Record<string, unknown>) => {
           setView: (latlng: [number, number], zoom: number) => unknown;
           invalidateSize: () => void;
